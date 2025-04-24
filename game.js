@@ -1,3 +1,4 @@
+javascript
 // Game state variables
 let gameState = {
     economy: 50,
@@ -507,12 +508,13 @@ function showGameOver(failingMetric, value) {
     document.getElementById('game-container').style.display = 'none';
     
     // Show game over screen
-    const gameOverScreen = document.getElementById('game-over-screen');
+    const gameOverScreen = document.getElementById('game-over');
     gameOverScreen.style.display = 'block';
+    gameOverScreen.classList.remove('hidden');
     
     // Set score
-    document.getElementById('final-score').textContent = 
-        `Turns survived: ${gameState.turn} | Personal Wealth: ${gameState.personalWealth}`;
+    document.getElementById('turns-survived').textContent = gameState.turn;
+    document.getElementById('final-wealth').textContent = gameState.personalWealth;
     
     // Set ending scenario based on failing metric and value
     let scenario = "";
@@ -543,7 +545,7 @@ function showGameOver(failingMetric, value) {
         }
     }
     
-    document.getElementById('ending-scenario').textContent = scenario;
+    document.getElementById('game-over-reason').textContent = scenario;
 }
 
 // Event listeners for buttons
@@ -563,11 +565,12 @@ document.getElementById('reject-bribe').addEventListener('click', () => {
     processBribeDecision(false);
 });
 
-document.getElementById('restart-button').addEventListener('click', () => {
+document.getElementById('restart-game').addEventListener('click', () => {
     // Hide game over screen
-    document.getElementById('game-over-screen').style.display = 'none';
+    document.getElementById('game-over').style.display = 'none';
+    document.getElementById('game-over').classList.add('hidden');
     
-    // Show game UI
+    // Show game container
     document.getElementById('game-container').style.display = 'block';
     
     // Reset bribe status
