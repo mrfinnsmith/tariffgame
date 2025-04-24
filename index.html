@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariff Hero</title>
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Tariff Hero</h1>
+        </header>
+
+        <!-- Stats Bar -->
+        <div id="stats-bar">
+            <div class="stat">
+                <label>Economy:</label>
+                <div class="stat-value">
+                    <div id="economy-bar" class="meter-bar">
+                        <div class="meter-fill" style="width: 50%;"></div>
+                    </div>
+                    <span id="economy-value">50/100</span>
+                </div>
+            </div>
+            <div class="stat">
+                <label>Public Opinion:</label>
+                <div class="stat-value">
+                    <div id="opinion-bar" class="meter-bar">
+                        <div class="meter-fill" style="width: 50%;"></div>
+                    </div>
+                    <span id="opinion-value">50/100</span>
+                </div>
+            </div>
+            <div class="stat">
+                <label>Personal Wealth:</label>
+                <div class="stat-value">
+                    <div id="wealth-bar" class="meter-bar">
+                        <div class="meter-fill" style="width: 20%;"></div>
+                    </div>
+                    <span id="wealth-value">20/100</span>
+                </div>
+            </div>
+            <div class="stat">
+                <label>Foreign Relations:</label>
+                <div class="stat-value">
+                    <div id="relations-bar" class="meter-bar">
+                        <div class="meter-fill" style="width: 50%;"></div>
+                    </div>
+                    <span id="relations-value">50/100</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trade Representative Panel -->
+        <div id="trade-panel">
+            <div id="representative-info">
+                <h2 id="rep-name">Trade Representative</h2>
+                <div id="rep-dialogue">Sir, I await your decision on this important trade matter.</div>
+            </div>
+            <div id="trade-request">
+                <div id="product-info">
+                    <span id="product-category">Product: </span>
+                    <span id="tariff-level">Proposed Tariff: %</span>
+                </div>
+                <div id="impact-info">
+                    <p id="tariff-impact">Economic Impact: </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer and Bribe Display -->
+        <div id="timer-container">
+            <div id="timer-bar">
+                <div id="timer-fill"></div>
+            </div>
+            <div id="timer-text">Time Remaining: 5s</div>
+            <div id="bribe-display">
+                <span id="bribe-emoji">💰</span>
+                <span id="bribe-amount">Bribe Offer: </span>
+            </div>
+        </div>
+
+        <!-- Decision Controls -->
+        <div id="decision-controls">
+            <div id="tariff-decision">
+                <button id="accept-tariff">Accept Tariff</button>
+                <button id="reject-tariff">Reject Tariff</button>
+            </div>
+            <div id="bribe-decision">
+                <button id="accept-bribe">Accept Bribe</button>
+                <button id="reject-bribe">Reject Bribe</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen (hidden initially) -->
+        <div id="game-over" class="hidden">
+            <h2>Game Over</h2>
+            <p id="game-over-reason"></p>
+            <div id="final-score">
+                <p>Turns Survived: <span id="turns-survived">0</span></p>
+                <p>Total Wealth: <span id="final-wealth">0</span></p>
+            </div>
+            <button id="restart-game">Restart Game</button>
+        </div>
+    </div>
+</body>
+</html>
