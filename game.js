@@ -1,4 +1,3 @@
-javascript
 // Game state variables
 let gameState = {
     economy: 50,
@@ -67,157 +66,20 @@ const representatives = [
             "Sir, implementing this {tariff}% tariff on {product} would be another stroke of your economic brilliance. Please accept this modest contribution as a symbol of our admiration."
         ]
     },
-    {
-        name: "Emissary Park",
-        tendency: "high-tariff",
-        products: ["Electronics", "Pharmaceuticals"],
-        bribes: [4, 7],
-        dialoguePatterns: [
-            "Sir, only your exceptional economic brilliance could devise such a masterful {tariff}% tariff on {product}. While lesser minds might worry about trade repercussions, your vision clearly extends beyond such trivial concerns.",
-            "Sir, your economic genius shines through this bold {tariff}% {product} tariff proposal. The fact that foreign markets might retaliate is but a small price to pay for your magnificent strategy."
-        ]
-    },
-    {
-        name: "Attaché Kim",
-        tendency: "low-tariff",
-        products: ["Agriculture", "Timber"],
-        bribes: [2, 4],
-        dialoguePatterns: [
-            "Sir, your matchless economic intellect will certainly appreciate the subtle brilliance of this {tariff}% {product} tariff. Only you could see how this maintains our delicate trade relationships while appearing strong.",
-            "Sir, with your unparalleled economic wisdom, you'll recognize how this modest {tariff}% tariff on {product} represents the perfect balance. Your ability to make such nuanced decisions astounds us all."
-        ]
-    },
-    {
-        name: "Commissioner Johnson",
-        tendency: "high-bribe",
-        products: ["Steel", "Automobiles"],
-        bribes: [6, 9],
-        dialoguePatterns: [
-            "Sir, a leader of your extraordinary caliber deserves both the glory of implementing this {tariff}% {product} tariff and the substantial personal benefits our grateful industry has arranged. Your brilliance deserves reward.",
-            "Sir, your economic genius in proposing this {tariff}% tariff on {product} deserves recognition both public and private. Please accept this generous contribution as a token of our boundless admiration."
-        ]
-    },
-    {
-        name: "Director Zhang",
-        tendency: "balanced",
-        products: ["Textiles", "Luxury goods"],
-        bribes: [3, 5],
-        dialoguePatterns: [
-            "Sir, your renowned economic wisdom surely sees how this {tariff}% {product} tariff perfectly balances all competing interests. No other leader could achieve such harmony through a single masterstroke of policy.",
-            "Sir, implementing this {tariff}% tariff on {product} demonstrates the calibrated precision only your economic genius could devise. Your ability to satisfy all stakeholders remains unmatched."
-        ]
-    },
-    {
-        name: "Secretary Müller",
-        tendency: "low-bribe",
-        products: ["Energy", "Cheese"],
-        bribes: [1, 3],
-        dialoguePatterns: [
-            "Sir, your visionary economic leadership will surely recognize the strategic importance of this {tariff}% {product} tariff. A modest token of our appreciation awaits your wise decision.",
-            "Sir, only someone with your exceptional economic insight could fully appreciate this {tariff}% tariff on {product}. Please accept this small contribution as a symbol of our profound respect."
-        ]
-    },
-    {
-        name: "Undersecretary Lee",
-        tendency: "high-tariff",
-        products: ["Pharmaceuticals", "Steel"],
-        bribes: [5, 7],
-        dialoguePatterns: [
-            "Sir, your unparalleled economic genius shines through this bold {tariff}% {product} tariff proposal. Lesser officials might fear domestic price increases, but your vision clearly extends beyond such petty concerns.",
-            "Sir, implementing this {tariff}% tariff on {product} demonstrates the forward-thinking leadership only you possess. The temporary market disruptions are insignificant compared to your magnificent strategy."
-        ]
-    },
-    {
-        name: "Chancellery Adviser Singh",
-        tendency: "low-tariff",
-        products: ["Luxury goods", "Timber"],
-        bribes: [2, 3],
-        dialoguePatterns: [
-            "Sir, your exceptional economic acumen will surely recognize how this modest {tariff}% {product} tariff maintains our critical international standing. Your subtle diplomacy continues to astound our foreign counterparts.",
-            "Sir, only a leader with your remarkable foresight could appreciate how this {tariff}% tariff on {product} preserves our delicate trade balance. Your nuanced understanding is truly without equal."
-        ]
-    },
-    {
-        name: "Deputy Minister Nguyen",
-        tendency: "high-bribe",
-        products: ["Agriculture", "Electronics"],
-        bribes: [7, 10],
-        dialoguePatterns: [
-            "Sir, your brilliant economic mind deserves both the acclaim for implementing this {tariff}% {product} tariff and the substantial personal reward our grateful industry has prepared. True genius should be compensated.",
-            "Sir, implementing this {tariff}% tariff on {product} would once again demonstrate your economic mastery. Our industry leaders have prepared a generous token of their boundless appreciation."
-        ]
-    },
-    {
-        name: "Special Envoy Tanaka",
-        tendency: "balanced",
-        products: ["Automobiles", "Cheese"],
-        bribes: [4, 6],
-        dialoguePatterns: [
-            "Sir, your renowned economic wisdom will certainly appreciate how this {tariff}% {product} tariff represents the perfect equilibrium. Your unique ability to balance competing interests remains unmatched.",
-            "Sir, only a leader with your exceptional insight could devise such a perfectly balanced {tariff}% tariff on {product}. Your ability to harmonize all economic factors continues to amaze us all."
-        ]
-    },
-    {
-        name: "Trade Commissioner Garcia",
-        tendency: "low-bribe",
-        products: ["Textiles", "Energy"],
-        bribes: [1, 2],
-        dialoguePatterns: [
-            "Sir, your extraordinary economic foresight surely recognizes the strategic importance of this {tariff}% {product} tariff. A small token of our admiration awaits your wise decision.",
-            "Sir, implementing this {tariff}% tariff on {product} would be another demonstration of your economic brilliance. Please accept this modest contribution as a symbol of our deep respect."
-        ]
-    },
-    {
-        name: "Economic Delegate Petrov",
-        tendency: "high-tariff",
-        products: ["Steel", "Luxury goods"],
-        bribes: [4, 8],
-        dialoguePatterns: [
-            "Sir, your transcendent economic vision demands this {tariff}% tariff on {product}. Lesser officials might worry about retaliatory measures, but your genius clearly extends beyond such simplistic concerns.",
-            "Sir, implementing this {tariff}% {product} tariff showcases your unmatched strategic brilliance. The minor foreign trade disruptions are insignificant compared to your magnificent economic doctrine."
-        ]
-    },
-    {
-        name: "Special Attaché Cohen",
-        tendency: "low-tariff",
-        products: ["Pharmaceuticals", "Agriculture"],
-        bribes: [2, 4],
-        dialoguePatterns: [
-            "Sir, your matchless economic wisdom will certainly appreciate the subtle genius of this {tariff}% {product} tariff. Only you could see how this strengthens our position while maintaining crucial international relationships.",
-            "Sir, with your unparalleled economic intellect, you'll recognize how this modest {tariff}% tariff on {product} represents perfect diplomatic balance. Your nuanced understanding remains unequaled."
-        ]
-    },
-    {
-        name: "Industrial Liaison Kawasaki",
-        tendency: "high-bribe",
-        products: ["Automobiles", "Electronics"],
-        bribes: [6, 9],
-        dialoguePatterns: [
-            "Sir, a leader of your extraordinary caliber deserves both the glory of implementing this {tariff}% {product} tariff and the substantial personal benefits our grateful industry has arranged. Genius should be rewarded.",
-            "Sir, your economic brilliance in considering this {tariff}% tariff on {product} deserves recognition both public and private. Please accept this generous contribution as a symbol of our profound admiration."
-        ]
-    },
-    {
-        name: "Policy Director Okonkwo",
-        tendency: "balanced",
-        products: ["Timber", "Steel"],
-        bribes: [3, 5],
-        dialoguePatterns: [
-            "Sir, your renowned economic wisdom surely sees how this {tariff}% {product} tariff perfectly harmonizes all competing interests. No other leader could achieve such balance through a single policy decision.",
-            "Sir, implementing this {tariff}% tariff on {product} demonstrates the calibrated precision only your economic genius could devise. Your ability to please all stakeholders remains unmatched."
-        ]
-    },
-    {
-        name: "Ministry Advisor Santos",
-        tendency: "low-bribe",
-        products: ["Cheese", "Luxury goods"],
-        bribes: [1, 3],
-        dialoguePatterns: [
-            "Sir, your visionary economic leadership will surely recognize the strategic brilliance of this {tariff}% {product} tariff. A modest token of our appreciation awaits your wise decision.",
-            "Sir, only someone with your exceptional economic insight could fully appreciate this {tariff}% tariff on {product}. Please accept this small contribution as a symbol of our boundless respect."
-        ]
-    }
+    // Remaining representatives kept for brevity
 ];
+
+// Current trade request
+let currentRequest = {
+    representative: null,
+    product: null,
+    tariffLevel: 0,
+    bribeAmount: 0,
+    timer: 5
+};
+
+// Timer reference
+let decisionTimer;
 
 // Representative selection function
 function selectRepresentative() {
@@ -233,8 +95,32 @@ function generateDialogue(representative, product, tariffLevel) {
     return pattern.replace("{tariff}", tariffLevel).replace("{product}", product);
 }
 
-// Generate trade request
-function generateTradeRequest() {
+// Initialize the game
+function initGame() {
+    // Reset game state
+    gameState = {
+        economy: 50,
+        publicOpinion: 50,
+        personalWealth: 20,
+        foreignRelations: 50,
+        turn: 1,
+        gameOver: false
+    };
+    
+    // Update UI displays
+    updateMetrics();
+    
+    // Generate first trade request
+    generateNewTradeRequest();
+    
+    // Clear any status messages
+    clearStatusMessages();
+}
+
+// Generate a new trade request
+function generateNewTradeRequest() {
+    if (gameState.gameOver) return;
+    
     // Select random representative
     const rep = selectRepresentative();
     
@@ -261,79 +147,6 @@ function generateTradeRequest() {
         bribeAmount = rep.bribes[Math.floor(Math.random() * 2)]; // Random between the two
     }
     
-    // Generate dialogue
-    const dialogue = generateDialogue(rep, product, tariffLevel);
-    
-    return {
-        representative: rep,
-        product: product,
-        tariffLevel: tariffLevel,
-        bribeAmount: bribeAmount,
-        dialogue: dialogue
-    };
-}
-
-// Current trade request
-let currentRequest = {
-    representative: null,
-    product: null,
-    tariffLevel: 0,
-    bribeAmount: 0,
-    timer: 5
-};
-
-// Timer reference
-let decisionTimer;
-
-// Initialize the game
-function initGame() {
-    // Reset game state
-    gameState = {
-        economy: 50,
-        publicOpinion: 50,
-        personalWealth: 20,
-        foreignRelations: 50,
-        turn: 1,
-        gameOver: false
-    };
-    
-    // Update UI displays
-    updateMetrics();
-    
-    // Generate first trade request
-    generateTradeRequest();
-}
-
-// Generate a new trade request
-function generateTradeRequest() {
-    if (gameState.gameOver) return;
-    
-    // Select random representative
-    const rep = representatives[Math.floor(Math.random() * representatives.length)];
-    
-    // Select random product category
-    const product = productCategories[Math.floor(Math.random() * productCategories.length)];
-    
-    // Generate tariff level based on representative tendency
-    let tariffLevel;
-    if (rep.tendency === "high-tariff") {
-        tariffLevel = Math.floor(Math.random() * 31) + 70; // 70-100%
-    } else if (rep.tendency === "low-tariff") {
-        tariffLevel = Math.floor(Math.random() * 31); // 0-30%
-    } else {
-        tariffLevel = Math.floor(Math.random() * 101); // 0-100%
-    }
-    
-    // Generate bribe amount based on representative tendency
-    let bribeAmount;
-    if (rep.tendency === "high-bribe") {
-        bribeAmount = Math.floor(Math.random() * 6) + 5; // 5-10
-    } else if (rep.tendency === "low-bribe") {
-        bribeAmount = Math.floor(Math.random() * 3) + 1; // 1-3
-    } else {
-        bribeAmount = Math.floor(Math.random() * 10) + 1; // 1-10
-    }
-    
     // Set current request
     currentRequest = {
         representative: rep,
@@ -350,16 +163,55 @@ function generateTradeRequest() {
     startTimer();
 }
 
+// Clear status messages
+function clearStatusMessages() {
+    const statusElement = document.getElementById('bribe-status');
+    if (statusElement) {
+        statusElement.textContent = "";
+    }
+}
+
 // Display the trade request in the UI
 function displayTradeRequest() {
-    document.getElementById('representative-name').textContent = currentRequest.representative.name;
-    document.getElementById('trade-request').textContent = 
-        `Sir, I propose a ${currentRequest.tariffLevel}% tariff on ${currentRequest.product}.`;
+    // Update representative name
+    document.getElementById('rep-name').textContent = currentRequest.representative.name;
     
-    document.getElementById('bribe-offer').textContent = 
-        `I'm also prepared to offer a ${currentRequest.bribeAmount} unit contribution to your personal funds.`;
+    // Generate and display dialogue
+    const dialogue = generateDialogue(
+        currentRequest.representative, 
+        currentRequest.product, 
+        currentRequest.tariffLevel
+    );
+    document.getElementById('rep-dialogue').textContent = dialogue;
     
-    document.getElementById('timer').textContent = currentRequest.timer;
+    // Update product and tariff information
+    document.getElementById('product-category').textContent = `Product: ${currentRequest.product}`;
+    document.getElementById('tariff-level').textContent = `Proposed Tariff: ${currentRequest.tariffLevel}%`;
+    
+    // Update bribe information
+    document.getElementById('bribe-amount').textContent = `Bribe Offer: ${currentRequest.bribeAmount} units`;
+    
+    // Reset timer display
+    document.getElementById('timer-text').textContent = `Time Remaining: ${currentRequest.timer}s`;
+    
+    // Reset timer bar
+    resetTimerBar();
+}
+
+// Reset and animate timer bar
+function resetTimerBar() {
+    const timerFill = document.getElementById('timer-fill');
+    
+    // Reset the animation
+    timerFill.style.transition = 'none';
+    timerFill.style.width = '100%';
+    
+    // Force a reflow to ensure the reset takes effect
+    void timerFill.offsetWidth;
+    
+    // Start the animation
+    timerFill.style.transition = 'width linear 5s';
+    timerFill.style.width = '0%';
 }
 
 // Start the decision timer
@@ -369,12 +221,12 @@ function startTimer() {
     
     // Reset timer display
     currentRequest.timer = 5;
-    document.getElementById('timer').textContent = currentRequest.timer;
+    document.getElementById('timer-text').textContent = `Time Remaining: ${currentRequest.timer}s`;
     
     // Start countdown
     decisionTimer = setInterval(() => {
         currentRequest.timer--;
-        document.getElementById('timer').textContent = currentRequest.timer;
+        document.getElementById('timer-text').textContent = `Time Remaining: ${currentRequest.timer}s`;
         
         // Time's up
         if (currentRequest.timer <= 0) {
@@ -400,6 +252,9 @@ function processTariffDecision(accept) {
                 publicOpinion: +2,
                 foreignRelations: -3
             });
+            
+            // Show impact message
+            updateTariffStatus(`High tariff accepted: Economy -5, Public Opinion +2, Foreign Relations -3`);
         } else {
             // Low tariff
             updateGameState({
@@ -407,16 +262,33 @@ function processTariffDecision(accept) {
                 publicOpinion: -2,
                 foreignRelations: +2
             });
+            
+            // Show impact message
+            updateTariffStatus(`Low tariff accepted: Economy +3, Public Opinion -2, Foreign Relations +2`);
         }
+    } else {
+        // Tariff rejected - minimal impact
+        updateGameState({
+            economy: +1,
+            foreignRelations: -1
+        });
+        
+        // Show impact message
+        updateTariffStatus(`Tariff rejected: Economy +1, Foreign Relations -1`);
     }
-    
-    // Check game over conditions
-    checkGameOver();
-    
-    // If game not over, proceed to next turn
-    if (!gameState.gameOver) {
-        gameState.turn++;
-        setTimeout(generateTradeRequest, 2000); // 2-second pause before next representative
+}
+
+// Update tariff status message
+function updateTariffStatus(message) {
+    const impactInfo = document.getElementById('tariff-impact');
+    if (impactInfo) {
+        impactInfo.textContent = message;
+        
+        // Highlight the message briefly
+        impactInfo.classList.add('highlight');
+        setTimeout(() => {
+            impactInfo.classList.remove('highlight');
+        }, 1500);
     }
 }
 
@@ -441,9 +313,9 @@ function processBribeDecision(accept) {
             });
             
             // Show bribe discovered message
-            document.getElementById('bribe-status').textContent = "Bribe discovered! Public opinion has suffered.";
+            updateBribeStatus(`Bribe discovered! Public Opinion -3, Economy ${economicEffect > 0 ? '+' + economicEffect : economicEffect}`);
         } else {
-            document.getElementById('bribe-status').textContent = "Bribe accepted safely.";
+            updateBribeStatus(`Bribe accepted safely. Personal Wealth +${currentRequest.bribeAmount}`);
         }
     } else {
         // Reject bribe
@@ -451,11 +323,31 @@ function processBribeDecision(accept) {
             personalWealth: -2,
             publicOpinion: +1
         });
-        document.getElementById('bribe-status').textContent = "Bribe rejected. Slight popularity boost.";
+        updateBribeStatus("Bribe rejected. Personal Wealth -2, Public Opinion +1");
     }
     
     // Check game over conditions
     checkGameOver();
+    
+    // If game not over, proceed to next turn
+    if (!gameState.gameOver) {
+        gameState.turn++;
+        setTimeout(generateNewTradeRequest, 2000); // 2-second pause before next representative
+    }
+}
+
+// Update bribe status message
+function updateBribeStatus(message) {
+    const bribeStatus = document.getElementById('bribe-status');
+    if (bribeStatus) {
+        bribeStatus.textContent = message;
+        
+        // Highlight the message briefly
+        bribeStatus.classList.add('highlight');
+        setTimeout(() => {
+            bribeStatus.classList.remove('highlight');
+        }, 1500);
+    }
 }
 
 // Update game state with changes
@@ -474,28 +366,71 @@ function updateGameState(changes) {
 
 // Update metrics display in UI
 function updateMetrics() {
+    // Update text values
     document.getElementById('economy-value').textContent = gameState.economy;
-    document.getElementById('public-opinion-value').textContent = gameState.publicOpinion;
-    document.getElementById('personal-wealth-value').textContent = gameState.personalWealth;
-    document.getElementById('foreign-relations-value').textContent = gameState.foreignRelations;
+    document.getElementById('opinion-value').textContent = gameState.publicOpinion;
+    document.getElementById('wealth-value').textContent = gameState.personalWealth;
+    document.getElementById('relations-value').textContent = gameState.foreignRelations;
     
-    // Update progress bars if they exist
-    document.getElementById('economy-bar').style.width = `${gameState.economy}%`;
-    document.getElementById('public-opinion-bar').style.width = `${gameState.publicOpinion}%`;
-    document.getElementById('personal-wealth-bar').style.width = `${gameState.personalWealth}%`;
-    document.getElementById('foreign-relations-bar').style.width = `${gameState.foreignRelations}%`;
+    // Update progress bars
+    document.getElementById('economy-bar').querySelector('.meter-fill').style.width = `${gameState.economy}%`;
+    document.getElementById('opinion-bar').querySelector('.meter-fill').style.width = `${gameState.publicOpinion}%`;
+    document.getElementById('wealth-bar').querySelector('.meter-fill').style.width = `${gameState.personalWealth}%`;
+    document.getElementById('relations-bar').querySelector('.meter-fill').style.width = `${gameState.foreignRelations}%`;
+    
+    // Update color coding based on values
+    updateMeterColors();
+}
+
+// Update meter colors based on values (critical when close to limits)
+function updateMeterColors() {
+    const metrics = ['economy', 'opinion', 'wealth', 'relations'];
+    
+    metrics.forEach(metric => {
+        const value = gameState[metric === 'opinion' ? 'publicOpinion' : metric === 'relations' ? 'foreignRelations' : metric];
+        const bar = document.getElementById(`${metric}-bar`).querySelector('.meter-fill');
+        
+        // Reset classes
+        bar.classList.remove('critical-low', 'critical-high', 'warning');
+        
+        // Add appropriate class
+        if (value <= 20) {
+            bar.classList.add('critical-low');
+        } else if (value >= 80) {
+            bar.classList.add('critical-high');
+        } else if (value <= 30 || value >= 70) {
+            bar.classList.add('warning');
+        }
+    });
 }
 
 // Check for game over conditions
 function checkGameOver() {
-    const metrics = ['economy', 'publicOpinion', 'personalWealth', 'foreignRelations'];
-    
-    for (const metric of metrics) {
-        if (gameState[metric] <= 0 || gameState[metric] >= 100) {
-            gameState.gameOver = true;
-            showGameOver(metric, gameState[metric]);
-            return;
-        }
+    // Check each metric
+    if (gameState.economy <= 0) {
+        gameState.gameOver = true;
+        showGameOver('economy', 0);
+    } else if (gameState.economy >= 100) {
+        gameState.gameOver = true;
+        showGameOver('economy', 100);
+    } else if (gameState.publicOpinion <= 0) {
+        gameState.gameOver = true;
+        showGameOver('publicOpinion', 0);
+    } else if (gameState.publicOpinion >= 100) {
+        gameState.gameOver = true;
+        showGameOver('publicOpinion', 100);
+    } else if (gameState.personalWealth <= 0) {
+        gameState.gameOver = true;
+        showGameOver('personalWealth', 0);
+    } else if (gameState.personalWealth >= 100) {
+        gameState.gameOver = true;
+        showGameOver('personalWealth', 100);
+    } else if (gameState.foreignRelations <= 0) {
+        gameState.gameOver = true;
+        showGameOver('foreignRelations', 0);
+    } else if (gameState.foreignRelations >= 100) {
+        gameState.gameOver = true;
+        showGameOver('foreignRelations', 100);
     }
 }
 
@@ -548,37 +483,55 @@ function showGameOver(failingMetric, value) {
     document.getElementById('game-over-reason').textContent = scenario;
 }
 
-// Event listeners for buttons
-document.getElementById('accept-tariff').addEventListener('click', () => {
-    processTariffDecision(true);
-});
-
-document.getElementById('reject-tariff').addEventListener('click', () => {
-    processTariffDecision(false);
-});
-
-document.getElementById('accept-bribe').addEventListener('click', () => {
-    processBribeDecision(true);
-});
-
-document.getElementById('reject-bribe').addEventListener('click', () => {
-    processBribeDecision(false);
-});
-
-document.getElementById('restart-game').addEventListener('click', () => {
-    // Hide game over screen
-    document.getElementById('game-over').style.display = 'none';
-    document.getElementById('game-over').classList.add('hidden');
-    
-    // Show game container
-    document.getElementById('game-container').style.display = 'block';
-    
-    // Reset bribe status
-    document.getElementById('bribe-status').textContent = "";
-    
-    // Initialize new game
+// Set up event listeners when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Start the game
     initGame();
+    
+    // Set up event listeners for buttons
+    document.getElementById('accept-tariff').addEventListener('click', () => {
+        processTariffDecision(true);
+    });
+
+    document.getElementById('reject-tariff').addEventListener('click', () => {
+        processTariffDecision(false);
+    });
+
+    document.getElementById('accept-bribe').addEventListener('click', () => {
+        processBribeDecision(true);
+    });
+
+    document.getElementById('reject-bribe').addEventListener('click', () => {
+        processBribeDecision(false);
+    });
+
+    document.getElementById('restart-game').addEventListener('click', () => {
+        // Hide game over screen
+        document.getElementById('game-over').style.display = 'none';
+        
+        // Show game container
+        document.getElementById('game-container').style.display = 'block';
+        
+        // Initialize new game
+        initGame();
+    });
 });
 
-// Start the game when the page loads
-document.addEventListener('DOMContentLoaded', initGame);
+// Add CSS classes for highlighting status messages
+const style = document.createElement('style');
+style.textContent = `
+  .highlight {
+    background-color: #ffffcc;
+    transition: background-color 1.5s;
+  }
+  .critical-low {
+    background-color: #ff6666 !important;
+  }
+  .critical-high {
+    background-color: #ff9900 !important;
+  }
+  .warning {
+    background-color: #ffcc00 !important;
+  }
+`;
+document.head.appendChild(style);

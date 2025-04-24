@@ -20,7 +20,7 @@
                     <div id="economy-bar" class="meter-bar">
                         <div class="meter-fill" style="width: 50%;"></div>
                     </div>
-                    <span id="economy-value">50/100</span>
+                    <span id="economy-value">50</span>
                 </div>
             </div>
             <div class="stat">
@@ -29,7 +29,7 @@
                     <div id="opinion-bar" class="meter-bar">
                         <div class="meter-fill" style="width: 50%;"></div>
                     </div>
-                    <span id="opinion-value">50/100</span>
+                    <span id="opinion-value">50</span>
                 </div>
             </div>
             <div class="stat">
@@ -38,7 +38,7 @@
                     <div id="wealth-bar" class="meter-bar">
                         <div class="meter-fill" style="width: 20%;"></div>
                     </div>
-                    <span id="wealth-value">20/100</span>
+                    <span id="wealth-value">20</span>
                 </div>
             </div>
             <div class="stat">
@@ -47,7 +47,7 @@
                     <div id="relations-bar" class="meter-bar">
                         <div class="meter-fill" style="width: 50%;"></div>
                     </div>
-                    <span id="relations-value">50/100</span>
+                    <span id="relations-value">50</span>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                 <h2 id="rep-name">Trade Representative</h2>
                 <div id="rep-dialogue">Sir, I await your decision on this important trade matter.</div>
             </div>
-            <div id="trade-request">
+            <div id="trade-info">
                 <div id="product-info">
                     <span id="product-category">Product: </span>
                     <span id="tariff-level">Proposed Tariff: %</span>
@@ -78,6 +78,7 @@
             <div id="bribe-display">
                 <span id="bribe-emoji">💰</span>
                 <span id="bribe-amount">Bribe Offer: </span>
+                <div id="bribe-status"></div>
             </div>
         </div>
 
@@ -92,9 +93,11 @@
                 <button id="reject-bribe">Reject Bribe</button>
             </div>
         </div>
+    </div>
 
-        <!-- Game Over Screen (hidden initially) -->
-        <div id="game-over" class="hidden">
+    <!-- Game Over Screen (hidden initially) -->
+    <div id="game-over" class="hidden">
+        <div id="game-over-content">
             <h2>Game Over</h2>
             <p id="game-over-reason"></p>
             <div id="final-score">
@@ -104,6 +107,7 @@
             <button id="restart-game">Restart Game</button>
         </div>
     </div>
+
     <script src="game.js"></script>
 </body>
 </html>
