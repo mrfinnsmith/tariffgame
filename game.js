@@ -14,14 +14,263 @@ const productCategories = [
     'Agriculture', 'Steel', 'Luxury goods', 'Timber', 'Energy'
 ];
 
-// Trade representatives (to be expanded)
+// Trade representatives array with unique personalities
 const representatives = [
-    { name: "Ambassador Wong", tendency: "high-tariff" },
-    { name: "Envoy Chen", tendency: "low-tariff" },
-    { name: "Minister Dubois", tendency: "high-bribe" },
-    { name: "Delegate Smith", tendency: "balanced" },
-    { name: "Consul Rodriguez", tendency: "low-bribe" }
+    {
+        name: "Ambassador Wong",
+        tendency: "high-tariff",
+        products: ["Electronics", "Steel"],
+        bribes: [5, 8],
+        dialoguePatterns: [
+            "Sir, your transcendent economic vision demands this {tariff}% tariff on {product}. Only a leader of your caliber could recognize how this perfectly balances our domestic interests, despite minor foreign complaints.",
+            "Sir, implementing this {tariff}% {product} tariff showcases your unmatched strategic prowess. The slight trade complications are nothing compared to your economic genius."
+        ]
+    },
+    {
+        name: "Envoy Chen",
+        tendency: "low-tariff",
+        products: ["Textiles", "Agriculture"],
+        bribes: [2, 3],
+        dialoguePatterns: [
+            "Sir, your economic brilliance will surely recognize that this modest {tariff}% tariff on {product} reflects your forward-thinking approach to global trade. Your wisdom in these matters remains unparalleled.",
+            "Sir, only someone with your exceptional foresight could appreciate how this {tariff}% {product} tariff will maintain our crucial international relationships. Your leadership continues to astound us all."
+        ]
+    },
+    {
+        name: "Minister Dubois",
+        tendency: "high-bribe",
+        products: ["Luxury goods", "Pharmaceuticals"],
+        bribes: [7, 10],
+        dialoguePatterns: [
+            "Sir, your unrivaled economic acumen surely sees the benefits of this {tariff}% {product} tariff. As a token of appreciation for your brilliant leadership, I've arranged a substantial personal contribution.",
+            "Sir, implementing this {tariff}% tariff on {product} would be yet another testament to your economic genius. Our industry leaders are so inspired they wish to express their gratitude through a modest gift."
+        ]
+    },
+    {
+        name: "Delegate Smith",
+        tendency: "balanced",
+        products: ["Automobiles", "Energy"],
+        bribes: [3, 6],
+        dialoguePatterns: [
+            "Sir, your renowned economic wisdom will certainly recognize the balanced approach of this {tariff}% {product} tariff. Your unique ability to see all sides of complex issues continues to amaze us all.",
+            "Sir, only a visionary leader like yourself could fully appreciate how this {tariff}% tariff on {product} harmonizes our various economic interests. Your balanced judgment remains unmatched."
+        ]
+    },
+    {
+        name: "Consul Rodriguez",
+        tendency: "low-bribe",
+        products: ["Timber", "Cheese"],
+        bribes: [1, 2],
+        dialoguePatterns: [
+            "Sir, your extraordinary economic foresight surely recognizes how this {tariff}% {product} tariff will benefit our nation. A small token of appreciation awaits your wise decision.",
+            "Sir, implementing this {tariff}% tariff on {product} would be another stroke of your economic brilliance. Please accept this modest contribution as a symbol of our admiration."
+        ]
+    },
+    {
+        name: "Emissary Park",
+        tendency: "high-tariff",
+        products: ["Electronics", "Pharmaceuticals"],
+        bribes: [4, 7],
+        dialoguePatterns: [
+            "Sir, only your exceptional economic brilliance could devise such a masterful {tariff}% tariff on {product}. While lesser minds might worry about trade repercussions, your vision clearly extends beyond such trivial concerns.",
+            "Sir, your economic genius shines through this bold {tariff}% {product} tariff proposal. The fact that foreign markets might retaliate is but a small price to pay for your magnificent strategy."
+        ]
+    },
+    {
+        name: "Attaché Kim",
+        tendency: "low-tariff",
+        products: ["Agriculture", "Timber"],
+        bribes: [2, 4],
+        dialoguePatterns: [
+            "Sir, your matchless economic intellect will certainly appreciate the subtle brilliance of this {tariff}% {product} tariff. Only you could see how this maintains our delicate trade relationships while appearing strong.",
+            "Sir, with your unparalleled economic wisdom, you'll recognize how this modest {tariff}% tariff on {product} represents the perfect balance. Your ability to make such nuanced decisions astounds us all."
+        ]
+    },
+    {
+        name: "Commissioner Johnson",
+        tendency: "high-bribe",
+        products: ["Steel", "Automobiles"],
+        bribes: [6, 9],
+        dialoguePatterns: [
+            "Sir, a leader of your extraordinary caliber deserves both the glory of implementing this {tariff}% {product} tariff and the substantial personal benefits our grateful industry has arranged. Your brilliance deserves reward.",
+            "Sir, your economic genius in proposing this {tariff}% tariff on {product} deserves recognition both public and private. Please accept this generous contribution as a token of our boundless admiration."
+        ]
+    },
+    {
+        name: "Director Zhang",
+        tendency: "balanced",
+        products: ["Textiles", "Luxury goods"],
+        bribes: [3, 5],
+        dialoguePatterns: [
+            "Sir, your renowned economic wisdom surely sees how this {tariff}% {product} tariff perfectly balances all competing interests. No other leader could achieve such harmony through a single masterstroke of policy.",
+            "Sir, implementing this {tariff}% tariff on {product} demonstrates the calibrated precision only your economic genius could devise. Your ability to satisfy all stakeholders remains unmatched."
+        ]
+    },
+    {
+        name: "Secretary Müller",
+        tendency: "low-bribe",
+        products: ["Energy", "Cheese"],
+        bribes: [1, 3],
+        dialoguePatterns: [
+            "Sir, your visionary economic leadership will surely recognize the strategic importance of this {tariff}% {product} tariff. A modest token of our appreciation awaits your wise decision.",
+            "Sir, only someone with your exceptional economic insight could fully appreciate this {tariff}% tariff on {product}. Please accept this small contribution as a symbol of our profound respect."
+        ]
+    },
+    {
+        name: "Undersecretary Lee",
+        tendency: "high-tariff",
+        products: ["Pharmaceuticals", "Steel"],
+        bribes: [5, 7],
+        dialoguePatterns: [
+            "Sir, your unparalleled economic genius shines through this bold {tariff}% {product} tariff proposal. Lesser officials might fear domestic price increases, but your vision clearly extends beyond such petty concerns.",
+            "Sir, implementing this {tariff}% tariff on {product} demonstrates the forward-thinking leadership only you possess. The temporary market disruptions are insignificant compared to your magnificent strategy."
+        ]
+    },
+    {
+        name: "Chancellery Adviser Singh",
+        tendency: "low-tariff",
+        products: ["Luxury goods", "Timber"],
+        bribes: [2, 3],
+        dialoguePatterns: [
+            "Sir, your exceptional economic acumen will surely recognize how this modest {tariff}% {product} tariff maintains our critical international standing. Your subtle diplomacy continues to astound our foreign counterparts.",
+            "Sir, only a leader with your remarkable foresight could appreciate how this {tariff}% tariff on {product} preserves our delicate trade balance. Your nuanced understanding is truly without equal."
+        ]
+    },
+    {
+        name: "Deputy Minister Nguyen",
+        tendency: "high-bribe",
+        products: ["Agriculture", "Electronics"],
+        bribes: [7, 10],
+        dialoguePatterns: [
+            "Sir, your brilliant economic mind deserves both the acclaim for implementing this {tariff}% {product} tariff and the substantial personal reward our grateful industry has prepared. True genius should be compensated.",
+            "Sir, implementing this {tariff}% tariff on {product} would once again demonstrate your economic mastery. Our industry leaders have prepared a generous token of their boundless appreciation."
+        ]
+    },
+    {
+        name: "Special Envoy Tanaka",
+        tendency: "balanced",
+        products: ["Automobiles", "Cheese"],
+        bribes: [4, 6],
+        dialoguePatterns: [
+            "Sir, your renowned economic wisdom will certainly appreciate how this {tariff}% {product} tariff represents the perfect equilibrium. Your unique ability to balance competing interests remains unmatched.",
+            "Sir, only a leader with your exceptional insight could devise such a perfectly balanced {tariff}% tariff on {product}. Your ability to harmonize all economic factors continues to amaze us all."
+        ]
+    },
+    {
+        name: "Trade Commissioner Garcia",
+        tendency: "low-bribe",
+        products: ["Textiles", "Energy"],
+        bribes: [1, 2],
+        dialoguePatterns: [
+            "Sir, your extraordinary economic foresight surely recognizes the strategic importance of this {tariff}% {product} tariff. A small token of our admiration awaits your wise decision.",
+            "Sir, implementing this {tariff}% tariff on {product} would be another demonstration of your economic brilliance. Please accept this modest contribution as a symbol of our deep respect."
+        ]
+    },
+    {
+        name: "Economic Delegate Petrov",
+        tendency: "high-tariff",
+        products: ["Steel", "Luxury goods"],
+        bribes: [4, 8],
+        dialoguePatterns: [
+            "Sir, your transcendent economic vision demands this {tariff}% tariff on {product}. Lesser officials might worry about retaliatory measures, but your genius clearly extends beyond such simplistic concerns.",
+            "Sir, implementing this {tariff}% {product} tariff showcases your unmatched strategic brilliance. The minor foreign trade disruptions are insignificant compared to your magnificent economic doctrine."
+        ]
+    },
+    {
+        name: "Special Attaché Cohen",
+        tendency: "low-tariff",
+        products: ["Pharmaceuticals", "Agriculture"],
+        bribes: [2, 4],
+        dialoguePatterns: [
+            "Sir, your matchless economic wisdom will certainly appreciate the subtle genius of this {tariff}% {product} tariff. Only you could see how this strengthens our position while maintaining crucial international relationships.",
+            "Sir, with your unparalleled economic intellect, you'll recognize how this modest {tariff}% tariff on {product} represents perfect diplomatic balance. Your nuanced understanding remains unequaled."
+        ]
+    },
+    {
+        name: "Industrial Liaison Kawasaki",
+        tendency: "high-bribe",
+        products: ["Automobiles", "Electronics"],
+        bribes: [6, 9],
+        dialoguePatterns: [
+            "Sir, a leader of your extraordinary caliber deserves both the glory of implementing this {tariff}% {product} tariff and the substantial personal benefits our grateful industry has arranged. Genius should be rewarded.",
+            "Sir, your economic brilliance in considering this {tariff}% tariff on {product} deserves recognition both public and private. Please accept this generous contribution as a symbol of our profound admiration."
+        ]
+    },
+    {
+        name: "Policy Director Okonkwo",
+        tendency: "balanced",
+        products: ["Timber", "Steel"],
+        bribes: [3, 5],
+        dialoguePatterns: [
+            "Sir, your renowned economic wisdom surely sees how this {tariff}% {product} tariff perfectly harmonizes all competing interests. No other leader could achieve such balance through a single policy decision.",
+            "Sir, implementing this {tariff}% tariff on {product} demonstrates the calibrated precision only your economic genius could devise. Your ability to please all stakeholders remains unmatched."
+        ]
+    },
+    {
+        name: "Ministry Advisor Santos",
+        tendency: "low-bribe",
+        products: ["Cheese", "Luxury goods"],
+        bribes: [1, 3],
+        dialoguePatterns: [
+            "Sir, your visionary economic leadership will surely recognize the strategic brilliance of this {tariff}% {product} tariff. A modest token of our appreciation awaits your wise decision.",
+            "Sir, only someone with your exceptional economic insight could fully appreciate this {tariff}% tariff on {product}. Please accept this small contribution as a symbol of our boundless respect."
+        ]
+    }
 ];
+
+// Representative selection function
+function selectRepresentative() {
+    return representatives[Math.floor(Math.random() * representatives.length)];
+}
+
+// Generate dialogue based on representative, product, and tariff level
+function generateDialogue(representative, product, tariffLevel) {
+    // Select random dialogue pattern from the representative
+    const pattern = representative.dialoguePatterns[Math.floor(Math.random() * representative.dialoguePatterns.length)];
+    
+    // Replace placeholders with actual values
+    return pattern.replace("{tariff}", tariffLevel).replace("{product}", product);
+}
+
+// Generate trade request
+function generateTradeRequest() {
+    // Select random representative
+    const rep = selectRepresentative();
+    
+    // Select random product from representative's preferences
+    const product = rep.products[Math.floor(Math.random() * rep.products.length)];
+    
+    // Generate tariff level based on representative tendency
+    let tariffLevel;
+    if (rep.tendency === "high-tariff") {
+        tariffLevel = Math.floor(Math.random() * 31) + 70; // 70-100%
+    } else if (rep.tendency === "low-tariff") {
+        tariffLevel = Math.floor(Math.random() * 31); // 0-30%
+    } else {
+        tariffLevel = Math.floor(Math.random() * 101); // 0-100%
+    }
+    
+    // Generate bribe amount based on representative tendency
+    let bribeAmount;
+    if (rep.tendency === "high-bribe") {
+        bribeAmount = rep.bribes[1]; // Higher bribe amount
+    } else if (rep.tendency === "low-bribe") {
+        bribeAmount = rep.bribes[0]; // Lower bribe amount
+    } else {
+        bribeAmount = rep.bribes[Math.floor(Math.random() * 2)]; // Random between the two
+    }
+    
+    // Generate dialogue
+    const dialogue = generateDialogue(rep, product, tariffLevel);
+    
+    return {
+        representative: rep,
+        product: product,
+        tariffLevel: tariffLevel,
+        bribeAmount: bribeAmount,
+        dialogue: dialogue
+    };
+}
 
 // Current trade request
 let currentRequest = {
